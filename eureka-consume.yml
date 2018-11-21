@@ -3,7 +3,7 @@ spring:
     active: dev
 ---
 server: 
-  port: 8205
+  port: 8208
 spring: 
   application: 
     name: consume-user
