@@ -1,0 +1,29 @@
+spring: 
+  profiles: 
+    active: dev
+---
+server: 
+  port: 8200
+spring: 
+  application: 
+    name: consume-user
+  profiles: dev  
+eureka: 
+  instance: 
+    prefer-ip-address: true  #注册服务的时候使用服务的ip地址
+  client: 
+    service-url: 
+       defaultZone: http://eureka-dev:7001/eureka/
+---
+server: 
+  port: 8300
+spring: 
+  application: 
+    name: consume-user
+  profiles: prod  
+eureka: 
+  instance: 
+    prefer-ip-address: true  #注册服务的时候使用服务的ip地址
+  client: 
+    service-url: 
+       defaultZone: http://eureka-prod:7001/eureka/
