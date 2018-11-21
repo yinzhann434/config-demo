@@ -1,0 +1,29 @@
+spring: 
+  profiles: 
+    active: dev
+---
+server: 
+  port: 8005
+spring: 
+  application: 
+    name: provide-user
+  profiles: dev    
+eureka: 
+  instance: 
+    prefer-ip-address: true  #注册服务的时候使用服务的ip地址
+  client: 
+    service-url: 
+      defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/,http://eureka3:7003/eureka/
+---
+server: 
+  port: 8006
+spring: 
+  application: 
+    name: provide-user
+  profiles: prod    
+eureka: 
+  instance: 
+    prefer-ip-address: true  #注册服务的时候使用服务的ip地址
+  client: 
+    service-url: 
+      defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/,http://eureka3:7003/eureka/
